@@ -5,9 +5,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```powershell
-streamlit run app.py     # 起動（http://localhost:8501）
+streamlit run app.py --server.address localhost --server.port 8501   # 起動（http://localhost:8501）
 ```
 
+- **`--server.address localhost` は毎回つける。** 既定は全インターフェイス待ち受けで同一 LAN から到達できてしまう。
+  この指定を `.streamlit/config.toml` に書いてはいけない。同じファイルを Streamlit Community Cloud も読むため、
+  クラウド側の待ち受けが壊れてデプロイが起動しなくなる。
 - **リント・フォーマット・テストのコマンドは存在しない。** 設定ファイルも dev 依存も意図的に置いていない。導入を勝手に提案しない。
 - **git リポジトリ。** リモートは `G-Access/Python-ai-application`（private / `main`）。git 2.55.0 と gh CLI が入っており、gh は認証済み。コミット・push は普通に行える。
 - **コミットの識別情報はこのリポジトリのローカル設定にだけ入れてある**（`git config user.name` / `user.email`）。グローバル設定は空なので、`--global` を前提にした手順を書かない。

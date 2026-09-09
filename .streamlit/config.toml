@@ -1,8 +1,8 @@
-[server]
-# ローカルのみに待ち受ける（既定は全インターフェイス＝同一LANから到達可能）
-address = "localhost"
-port = 8501
-headless = false
+# 注意: このファイルは Streamlit Community Cloud でも読まれる。
+# server.address / server.port / server.headless はクラウド側が自分で決めるため、
+# ここに書くと待ち受けに失敗してデプロイが起動しない。ローカル限定の設定は
+# コミットせず、起動時のフラグか環境変数で渡すこと。
+#   例: streamlit run app.py --server.address localhost
 
 [browser]
 gatherUsageStats = false
