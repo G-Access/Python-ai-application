@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.streamlit/secrets.toml
+history/
+
+# ローカル専用の設定・インストール済みスキル
+.claude/settings.local.json
+.agents/
+skills-lock.json
+.claude/skills/skill-creator/
